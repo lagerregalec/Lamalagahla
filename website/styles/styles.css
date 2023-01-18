@@ -1,9 +1,18 @@
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Souvenir');
+@import url('https://fonts.googleapis.com/css2?family=Souvenir:wght@500&display=swap');
 @font-face {
   font-family: "Lovecraft";
   src: url("../assets/fonts/Lovecraft/Love_Craft.otf");
+  }
+
+@font-face {
+  font-family: "Souvenir";
+  src: url("../fonts/souvenirstd-demi.otf") format("opentype");
+  }
+@font-face {
+  font-family: "Souvenir";
+  src: url("../fonts/Souvenir-Medium.otf") format("opentype");
   }
 
 canvas {
@@ -11,7 +20,6 @@ canvas {
     overflow: hidden;
     z-index: -1;
     margin: auto;
-    padding-top: 10vh;
 }
 
 #date_svg {
@@ -82,7 +90,7 @@ html {
 body {
     height: 100%;
     margin: 0;
-    background-color: rgb(216, 192, 167);
+    background-color: #01B4FF;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -93,8 +101,21 @@ body {
 }
 
 
-#bg-beige {
-  background-color: #d8c0a7;
+#bg-blue {
+  background-color: #01B4FF
+;
+}
+
+#bg-yellow {
+  background-color: #FFF700
+}
+
+#bg-orange {
+  background-color: #FB7901
+}
+
+#bg-pink {
+  background-color: #FF6C9B
 }
 
 #navbar {
@@ -104,11 +125,24 @@ body {
     margin: auto;
 }
 
+
 .navbar-toggler{
   position: absolute;
   top: 0;
   right: 0;
   z-index: 100;
+  border-color: white!important;
+  color: white!important;
+}
+
+.navbar-toggler-icon path{
+  fill: white!important;
+}
+
+.navbar{
+  padding: 0;
+  border-top: 0.3rem solid black;
+  border-bottom: 0.3rem solid black;
 }
 
 #title_svg {
@@ -137,8 +171,12 @@ body {
   color: #ea5d7b;
 }
 
-.bg-beige {
-  background-color:  #d8c0a7;
+.bg-blue {
+  background-color:  #01B4FF;
+}
+
+.bg-white {
+  background-color: white;
 }
 
 .navbar-right {
@@ -147,7 +185,7 @@ body {
 
 .content{
   height: 100%;
-  background-color: #d8c0a7;
+  background-color: #01B4FF;
   position: relative;
   justify-content: center;
 }
@@ -161,7 +199,8 @@ body {
 }
 
 .navbar-nav > li > .dropdown-menu { 
-  background-color: #d8c0a7;
+  background-color: white
+;
 }
 
 .img-about{
@@ -201,7 +240,8 @@ body {
 }
 
 .impressum {
-    color: #d8c0a7 !important;
+    color: #01B4FF
+ !important;
     text-decoration: underline;
 }
 
@@ -232,15 +272,10 @@ body {
   text-align: left;
 }
 .theme_header_text{
-  color: #7c7cba;
-  font-family: 'Poppins';
+  color: #000000;
+  font-family: 'Souvenir';
   letter-spacing: 0.2em;
   font-size: 1.7em !important;
-}
-
-.navbar-toggler{
-  margin-top: 1em;
-  margin-right: 1.5em;
 }
 
 .centered {
@@ -260,7 +295,7 @@ footer {
 }
 .footer-block{
     margin-top: 5em;
-    background-color: #4a2051   ;
+    background-color: #000000   ;
     height: 100%;
   }
 
@@ -271,23 +306,24 @@ footer {
 }
 
 .footer-title{
-    color: #7c7cba;
-    font-family: 'Poppins';
+    color: #000000;
+    font-family: 'Souvenir';
    letter-spacing: 0.2em;
 }
 
 .sponsor-circle{
     height: 25px;
     width: 25px;
-    background-color: #692471;
+    background-color: #000000;
     border-radius: 50%;
     display: inline-block;
     margin-right: 0.5em;
 }
 
 .footer-address{
-    font-family: 'Poppins';
-    color: #d8c0a7;
+    font-family: 'Souvenir';
+    color: #01B4FF
+;
 }
 
 .title-about{
@@ -296,23 +332,27 @@ footer {
   left: 16px;
 }
 
+.nav-item {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .nav-link {
-  color: #692471 !important;
-  font-family: "Poppins", sans-serif;
+  color: #000000 !important;
+  font-family: "Souvenir", sans-serif;
   text-align: center;
-  margin-top: 2.5vh;
   text-decoration: none;
   font-size: 2em;
-  margin-right: 1.1em;
+  line-height: 2rem;
   white-space: nowrap;
 }
 
 .nav-link.active {
-  color: #7D7DBB !important;
+  text-decoration: underline;
 }
 
 .nav-link:hover {
-  color: #881994 !important;
+  color: #01B4FF !important;
 }
 
 #logo {
@@ -321,8 +361,8 @@ footer {
   top: 2vh;
   left: 2vh; */
   display: block;
-    margin-left: auto;
-    margin-right: auto;
+    /*margin-left: auto;
+    margin-right: auto;*/
   z-index: 25;
 }
 
@@ -369,7 +409,7 @@ footer {
     color: #F8A153;
     font-weight: bolder;
     text-align: center;
-    font-family: 'Poppins';
+    font-family: 'Souvenir';
 }
 
 .act-table{
@@ -405,8 +445,8 @@ footer {
 
 .text_style {
     font-size: 1.1em !important;
-    color: #4a2051;
-    font-family: 'Poppins';
+    color: #000000;
+    font-family: 'Souvenir';
 }
 
 #content h1 {
@@ -415,8 +455,8 @@ footer {
 }
 
 .ticket_info{
-	color: #4a2051;
-    font-family: 'Poppins';
+	color: #000000;
+    font-family: 'Souvenir';
 }
 
 
@@ -551,7 +591,7 @@ footer {
 }
 
 .email_link{
-	color: #7c7cba !important;
+	color: #000000 !important;
 }
 
 .email_link:hover {
@@ -559,8 +599,9 @@ footer {
 }
 
 .program_date {
-	color: #d8c0a7;
-	font-family: 'Poppins';
+	color: #01B4FF
+;
+	font-family: 'Souvenir';
   font-weight: bolder;
   letter-spacing: 0.1em;
 	font-size: 2vmax !important;
@@ -570,8 +611,9 @@ footer {
 }
 
 .program_title {
-	color: #d8c0a7;
-	font-family: 'Poppins';
+	color: #01B4FF
+;
+	font-family: 'Souvenir';
   font-weight: bolder;
 	font-size: 2vmax !important;
   letter-spacing: 0.1em;
@@ -581,25 +623,25 @@ footer {
 }
 
 .act_band{
-  color: #692471 !important;
+  color: #000000 !important;
   font-weight: bolder;
   font-size: 3.5vmax !important;
 }
 
 .act_dj{
-  color: #7c7cba !important;
+  color: #000000 !important;
   font-weight: bolder;
   font-size: 3.5vmax !important;
 }
 
 .entertainment{
-  color: #692471 !important;
+  color: #000000 !important;
   font-weight: bold;
   font-size: 1.8vmax !important;
 }
 
 .timestamps{
-  color: #692471 !important;
+  color: #000000 !important;
   font-weight: bold;
   font-size: 2vmax !important;
   text-align: end;
@@ -609,12 +651,12 @@ footer {
 .program_acts {
 	color: #ea5d7b;
 	font-size: 2em !important;
-	font-family: 'Poppins';
+	font-family: 'Souvenir';
 }
 
 .program_act_link {
 	color: #7D7DBB !important;
-	/* font-family: 'Poppins'; */
+	/* font-family: 'Souvenir'; */
 	/* font-size: 2em !important; */
 }
 
