@@ -90,7 +90,6 @@ html {
 body {
     height: 100%;
     margin: 0;
-    background-color: #01B4FF;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -100,21 +99,24 @@ body {
   flex: 1 0 auto;
 }
 
+.bg-green{
+  background-color: #B3FE04
+}
 
-#bg-blue {
+.bg-blue {
   background-color: #01B4FF
 ;
 }
 
-#bg-yellow {
+.bg-yellow {
   background-color: #FFF700
 }
 
-#bg-orange {
+.bg-orange {
   background-color: #FB7901
 }
 
-#bg-pink {
+.bg-pink {
   background-color: #FF6C9B
 }
 
@@ -185,7 +187,7 @@ body {
 
 .content{
   height: 100%;
-  background-color: #01B4FF;
+  padding: 15px;
   position: relative;
   justify-content: center;
 }
@@ -260,7 +262,7 @@ body {
     padding-top: 6em;
 }
 .row-info{
-    padding-top: 4em;
+    padding-top: 15px;
 }
 
 .row {
@@ -271,11 +273,31 @@ body {
   padding-top: 3em;
   text-align: left;
 }
+
+.theme_header_subtitle{
+  text-align: center;
+  color: #000000;
+  font-family: 'Souvenir';
+  font-size: 1.75em !important;
+  line-height: 1.5rem;
+  padding-top: 4vh;
+}
+
+.theme_header_title{
+  color: #000000;
+  font-family: 'Souvenir';
+  font-size: 4em !important;
+  line-height: 1.5rem;
+  text-align: center;
+  padding-top: 3vh;
+  margin-bottom: 4vh;
+}
+
 .theme_header_text{
   color: #000000;
   font-family: 'Souvenir';
-  letter-spacing: 0.2em;
-  font-size: 1.7em !important;
+  font-size: 1.75em !important;
+  line-height: 1.5rem;
 }
 
 .centered {
@@ -446,7 +468,8 @@ footer {
 .text_style {
     font-size: 1.1em !important;
     color: #000000;
-    font-family: 'Souvenir';
+    font-family: 'EditorialNew';
+    line-height: 1.5rem;
 }
 
 #content h1 {
@@ -574,14 +597,14 @@ footer {
 }
 
 .info_text {
-  text-align: left;
-  padding-left: 3%;
+  /*text-align: left;
+  padding-left: 3%;*/
 }
 
 .info_title {
-  padding-top: 2vh;
+  padding-top: 2.5vh;
   text-align: left;
-  padding-left: 3%;
+  /*padding-left: 3%;*/
 }
 
 .sponsors_logo {
@@ -687,4 +710,8 @@ iframe {
   background: none !important;
   border: none;
   padding: 10px !important;
+}
+
+.border{
+  border: 0.3rem solid black!important; 
 }
