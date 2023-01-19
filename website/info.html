@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="js/utils/leafletjs/leaflet.css" />
     <!-- <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' /> -->
     <link rel="stylesheet" href="js/utils/leaflet_routing_machine/leaflet-routing-machine.css" />
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
 </head>
 
 <body>
@@ -23,239 +24,263 @@
 
     </section>
 
-    <section id="page" class="bg-orange">
+    <section id="page">
 
-        <div class="content">
+        <div class="content bg-orange rounded">
             <div class="container-fluid">
 
-                <div class="row row-info">
-                    <div class="mx-auto">
+                    <div class="theme_header mx-auto">
                         <h1 class="theme_header_subtitle mx-auto">Alles was du wissen musst</h1>
                         <h1 class="theme_header_title mx-auto">Infos A-Z</h1>
                     </div>
 
+
+                <div id="accordion" class="accordion pt-3">
+                    <div class="card p-3 border rounded bg-white">
+                        <div class="card-header collapsed p-0" data-toggle="collapse" href="#collapseTwo">
+                            <a class="info_title theme_header_text">
+                                Anreise
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="card-body info_text text_style collapse p-0" data-parent="#accordion" >
+                            <p class="mb-0 mt-2">Grundsätzlich legen wir unseren Besucher*innen ans Herz, sich mit den öffentlichen
+                                Verkehrsmitteln oder dem Velo fortzubewegen.
+                                <br>
+                                Dennoch werden Parkplätze zur Verfügung stehen, da sich das
+                                Festivalgelände eher abgelegen befindet. Die vorhandenen Parkplätze sind kostenpflichtig
+                                und gut signalisiert.
+                                <br /><br /><b>Parkgebühr: 10.-</b>
+                                <br> <br>
+    
+                                Das Festivalgelände an der <a href="https://goo.gl/maps/fjsXjSZtmBiA73Ca6">Litzibuchstrasse
+                                    29</a> befindet sich 15 Gehminuten von der Bushaltestelle Oberwil-Lieli, Lieli Dorf
+                                entfernt. Mit dem Fahrrad sind es lediglich 5 Minuten.
+                                Auch die Bushaltestellen Aesch ZH, Gemeindehaus und Arni, Dorf liegen relativ nahe. Von dort
+                                habt ihr etwa 20-25 Gehminuten zum Festivalgelände.
+                                Doch egal für welche Busstation ihr euch entscheidet: Wir werden den Gehweg zum Gelände
+                                deutlich kennzeichnen!
+                                <br>
+                                Wem ein solcher Spaziergang nicht so ganz zusagt: Wir werden schauen, dass wir euch in
+                                regelmässigen Abständen an den Bushaltestellen mit PKW’s abholen kommen. Falls ihr also viel
+                                Gepäck habt (Zelt etc.) oder eine Gehverletzung – we got you! Für ein kleines Entgelt von
+                                5CHF seid ihr mit dabei. Auch Fahrten in der Nacht nach Berikon-Widen und Birmensdorf sind
+                                geplant. So kommt ihr bis nachts um halb vier noch sicher nach Hause. Mehr Infos dazu folgen
+                                noch!
+    
+                                <br /><br /><b>Nächste Bushaltestellen:</b> <br>
+                                - <a href="https://goo.gl/maps/fqGyUMeAUDsEpFoHA">Oberwil-Lieli (AG), Dorf</a> (zu Fuss: ca.
+                                15 min) <br>
+                                - <a href="https://goo.gl/maps/DypKZqDFJ4TboC3M6">Aesch (ZH), Gemeindehaus</a> (zu Fuss: ca.
+                                20-25 min) <br>
+                                - <a href="https://goo.gl/maps/iGmzmker57S3uxgUA">Arni (AG), Dorf</a> (zu Fuss: ca. 20-25
+                                min) <br>
+                            </p>
+                            <div id="map"></div>
+                        </div>
+                        </div>
                 </div>
-
-                <div class="row row-info">
-                    <div class="container-fluid border rounded bg-white">
-                        <h1 class="info_title theme_header_text">Tickets</h1>
-                        <p class="info_text text_style">
-                            Die Eintrittspreise werden bewusst niedrig gehalten, um sowohl jungen
-                            Menschen als auch grossen Familien den Besuch des Festivals zu ermöglichen.
-                            Aus diesem Grund ist der Eintritt für Kinder bis 12 Jahre kostenlos.
-                            Der Preis für den Zeltplatz ist jeweils im Ticket miteinbegriffen.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="row row-info">
-                    <div class="container-fluid border rounded bg-white">
-                        <h1 class="info_title theme_header_text">Anreise</h1>
-                        <p class="info_text text_style">
-                            Grundsätzlich legen wir unseren Besucher*innen ans Herz, sich mit den öffentlichen
-                            Verkehrsmitteln oder dem Velo fortzubewegen.
-                            <br>
-                            Dennoch werden Parkplätze zur Verfügung stehen, da sich das
-                            Festivalgelände eher abgelegen befindet. Die vorhandenen Parkplätze sind kostenpflichtig
-                            und gut signalisiert.
-                            <br /><br /><b>Parkgebühr: 10.-</b>
-                            <br> <br>
-
-                            Das Festivalgelände an der <a href="https://goo.gl/maps/fjsXjSZtmBiA73Ca6">Litzibuchstrasse
-                                29</a> befindet sich 15 Gehminuten von der Bushaltestelle Oberwil-Lieli, Lieli Dorf
-                            entfernt. Mit dem Fahrrad sind es lediglich 5 Minuten.
-                            Auch die Bushaltestellen Aesch ZH, Gemeindehaus und Arni, Dorf liegen relativ nahe. Von dort
-                            habt ihr etwa 20-25 Gehminuten zum Festivalgelände.
-                            Doch egal für welche Busstation ihr euch entscheidet: Wir werden den Gehweg zum Gelände
-                            deutlich kennzeichnen!
-                            <br>
-                            Wem ein solcher Spaziergang nicht so ganz zusagt: Wir werden schauen, dass wir euch in
-                            regelmässigen Abständen an den Bushaltestellen mit PKW’s abholen kommen. Falls ihr also viel
-                            Gepäck habt (Zelt etc.) oder eine Gehverletzung – we got you! Für ein kleines Entgelt von
-                            5CHF seid ihr mit dabei. Auch Fahrten in der Nacht nach Berikon-Widen und Birmensdorf sind
-                            geplant. So kommt ihr bis nachts um halb vier noch sicher nach Hause. Mehr Infos dazu folgen
-                            noch!
-
-                            <br /><br /><b>Nächste Bushaltestellen:</b> <br>
-                            - <a href="https://goo.gl/maps/fqGyUMeAUDsEpFoHA">Oberwil-Lieli (AG), Dorf</a> (zu Fuss: ca.
-                            15 min) <br>
-                            - <a href="https://goo.gl/maps/DypKZqDFJ4TboC3M6">Aesch (ZH), Gemeindehaus</a> (zu Fuss: ca.
-                            20-25 min) <br>
-                            - <a href="https://goo.gl/maps/iGmzmker57S3uxgUA">Arni (AG), Dorf</a> (zu Fuss: ca. 20-25
-                            min) <br>
-                        </p>
-                        <div id="map"></div>
-
-                    </div>
-                </div>
-
-                <div class="row row-info">
-                    <div class="container-fluid border rounded bg-white">
-                        <h1 class="info_title theme_header_text">Shuttlebus</h1>
-                        <p class="info_text text_style">
-                            Wem ein kurzer Spaziergang nicht so ganz zusagt, werden wir in regelmässigen Abständen an
-                            den Bushaltestellen mit Taxis abholen kommen. Falls ihr also viel
-                            Gepäck habt (Zelt etc.) oder eine Gehverletzung – we got you! Für ein kleines Entgelt, in
-                            Bar, von
-                            CHF 5.00 seid ihr mit dabei. Auch Fahrten in der Nacht nach Berikon-Widen und Birmensdorf
-                            sind geplant. So kommt ihr bis nachts um drei Uhr noch sicher nach Hause.
-
-                            <br>
-                            <br>
-                            <b>Fahrplan:</b> <br>
-                            <u>Festivalgelände
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-left-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z" />
-                                </svg>
-                                Bushaltestelle Oberwil-Lieli Dorf:</u><br>
-                            Freitag 16.30-00.30 Uhr <br>
-                            Samstag 12.30-00.30 Uhr
-                            <br><br>
-
-                            <u>Festivalgelände
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg>
-                                Bahnhof Berikon-Widen:</u> <br>
-                            Samstag 00.30-03.00 Uhr <br>
-                            Sonntag 00.30-03.00 Uhr
-                            <br>
-                            <br>
-                            <u>Festivalgelände
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg>
-                                Bahnhof Birmensdorf ZH:</u><br>
-                            Samstag 00.30-03.00 Uhr <br>
-                            Sonntag 00.30-03.00 Uhr
-                            <br>
-                    </div>
-                </div>
-
-
-                <div class="row row-info">
-                    <div class="container-fluid border rounded bg-white">
-                        <h1 class="info_title theme_header_text">Camping</h1>
-                        <p class="info_text text_style">
-                            Es werden genügend Zeltplätze als Übernachtungsmöglichkeit zur Verfügung stehen. Die
-                            Zeltplatzgebühr ist im Festivalpass inbegriffen, da wir euch die Möglichkeit vor Ort zu
-                            übernachten so einfach wie möglich gestalten wollen. Spart euch Zeit und Geld für eine
-                            überflüssige An- und Abreise und gönnt euch das ultimative Festivalerlebnis, umgeben von
-                            guter Musik und schöner Natur!
-                        </p>
-                    </div>
-
-                    <div class="row row-info">
-                        <div class="container-fluid border rounded bg-white text-box-info">
-                            <h1 class="info_title theme_header_text">Speis und Trank</h1>
-                            <p class="info_text text_style">
-                                Auf dem Festivalgelände werden genügend Optionen zur Verpflegung vorhanden sein. Ihr
-                                werded eine Bar, eine warme Küche für abends und einen Crêpestand als Option für den
-                                kleinen Hunger zwischendurch vorfinden. Fliessendes Wasser wird euch natürlich kostenlos
-                                und rund um die Uhr zur Verfügung stehen.
-                                Auch für ein feines Frühstück und Kaffee ist gesorgt!
-                                Und falls ihr auf eigene Faust noch einkaufen wollt: Direkt neben der Busstation
-                                Oberwil-Lieli, Lieli Dorf befindet sich ein Volg.
+                
+                <div id="accordion" class="accordion pt-3">
+                    <div class="card p-3 border rounded bg-white">
+                        <div class="card-header collapsed p-0" data-toggle="collapse" href="#collapseSix">
+                            <a class="info_title theme_header_text">
+                                Awareness und Groundrules
+                            </a>
+                        </div>
+                        <div id="collapseSix" class="card-body info_text text_style collapse p-0" data-parent="#accordion" >
+                            <p class="mb-0 mt-2"><b>Groundrules</b> <br>
+                                Wir sprechen uns deutlich gegen Sexismus, Rassimus, Ableismus, Homophobie etc. aus. Jegliche Art von Diskriminierung wird daher untersagt! Denn wir wollen, dass sich unsere Besucher*innen wohl fühlen und sich frei bewegen können - unabhängig von Sexualität, Geschlecht oder Herkunft. <br>
+                                Des Weiteren gibt es geländespezifische Regeln zu beachten: Bitte verlasst wenn möglich das Festivalgelände nicht, betretet weder den Stall noch andere Gebäude und versucht stets euren Abfall fachgerecht zu entsorgen. Und falls ihr doch mal das Gelände verlassen müsst, seid euch bewusst, dass es in der Umgebung womöglich Weidezäune mit Strom hat (in der Nacht nicht gut sichtbar!). Wir danken euch herzlichst für euer Verständnis!
+                            
+                                <br>
+                                <br>
+    
+                                <b>Awareness Konzept</b><br>
+                                Hier findet Ihr unser Awarenesskonzept:
+                                <a href="Awarenesskonzept.pdf">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
+                                        <path d="M5.523 12.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548zm2.455-1.647c-.119.025-.237.05-.356.078a21.148 21.148 0 0 0 .5-1.05 12.045 12.045 0 0 0 .51.858c-.217.032-.436.07-.654.114zm2.525.939a3.881 3.881 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256zM8.278 6.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z"/>
+                                        <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.651 11.651 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.856.856 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.844.844 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.76 5.76 0 0 0-1.335-.05 10.954 10.954 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.238 1.238 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a19.697 19.697 0 0 1-1.062 2.227 7.662 7.662 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103z"/>
+                                      </svg>
+                                </a>
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="row row-info">
-                    <div class="container-fluid border rounded bg-white">
-                        <h1 class="info_title theme_header_text">Nachhaltigkeit</h1>
-                        <p class="info_text text_style">
-                            Aus ökologischer Überzeugung sind wir darum bemüht, auf nachhaltige Baumaterialien wie
-                            Holz und wiederverwenbare Werkstoffe zu setzen. Ausserdem legen wir hohen Wert auf ein
-                            funktionierendes Recycling- und Abfallkonzept: Es werden genügend Abfalleimer (Plastik,
-                            PET etc.) zur Verfügung stehen und wir bitten unsere Festivalbesucher*innen eingehend,
-                            diese auch konsequent zu nutzen. Besonderes Merkmal liegt zudem auf den
-                            Zigarettenstümmel: Bitte verwahrt diese in den „Taschenbechern“, welche ihr beim Eingang
-                            kostenlos beziehen könnt. So können wir für den Rest des Jahres eine grüne, gesunde Wiese
-                            für die Tiere des Bio-Bauernhofs gewähren.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row row-info">
-                    <div class="container-fluid border rounded bg-white">
-                        <h1 class="info_title theme_header_text">Awareness und Groundrules</h1>
-                        <p class="info_text text_style">
-                            <b>Groundrules</b> <br>
-                            Wir sprechen uns deutlich gegen Sexismus, Rassimus, Ableismus, Homophobie etc. aus. Jegliche Art von Diskriminierung wird daher untersagt! Denn wir wollen, dass sich unsere Besucher*innen wohl fühlen und sich frei bewegen können - unabhängig von Sexualität, Geschlecht oder Herkunft. <br>
-                            Des Weiteren gibt es geländespezifische Regeln zu beachten: Bitte verlasst wenn möglich das Festivalgelände nicht, betretet weder den Stall noch andere Gebäude und versucht stets euren Abfall fachgerecht zu entsorgen. Und falls ihr doch mal das Gelände verlassen müsst, seid euch bewusst, dass es in der Umgebung womöglich Weidezäune mit Strom hat (in der Nacht nicht gut sichtbar!). Wir danken euch herzlichst für euer Verständnis!
-                        
-                            <br>
-                            <br>
-
-                            <b>Awareness Konzept</b><br>
-                            Hier findet Ihr unser Awarenesskonzept:
-                            <a href="Awarenesskonzept.pdf">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
-                                    <path d="M5.523 12.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548zm2.455-1.647c-.119.025-.237.05-.356.078a21.148 21.148 0 0 0 .5-1.05 12.045 12.045 0 0 0 .51.858c-.217.032-.436.07-.654.114zm2.525.939a3.881 3.881 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256zM8.278 6.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z"/>
-                                    <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.651 11.651 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.856.856 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.844.844 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.76 5.76 0 0 0-1.335-.05 10.954 10.954 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.238 1.238 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a19.697 19.697 0 0 1-1.062 2.227 7.662 7.662 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103z"/>
-                                  </svg>
+                <div id="accordion" class="accordion pt-3">
+                    <div class="card p-3 border rounded bg-white">
+                        <div class="card-header collapsed p-0" data-toggle="collapse" href="#collapseThree">
+                            <a class="info_title theme_header_text">
+                                Shuttlebus
                             </a>
-                        
-                        </p>
+                        </div>
+                        <div id="collapseThree" class="card-body info_text text_style collapse p-0" data-parent="#accordion" >
+                            <p class="mb-0 mt-2"> Wem ein kurzer Spaziergang nicht so ganz zusagt, werden wir in regelmässigen Abständen an
+                                den Bushaltestellen mit Taxis abholen kommen. Falls ihr also viel
+                                Gepäck habt (Zelt etc.) oder eine Gehverletzung – we got you! Für ein kleines Entgelt, in
+                                Bar, von
+                                CHF 5.00 seid ihr mit dabei. Auch Fahrten in der Nacht nach Berikon-Widen und Birmensdorf
+                                sind geplant. So kommt ihr bis nachts um drei Uhr noch sicher nach Hause.
+    
+                                <br>
+                                <br>
+                                <b>Fahrplan:</b> <br>
+                                <u>Festivalgelände
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z" />
+                                    </svg>
+                                    Bushaltestelle Oberwil-Lieli Dorf:</u><br>
+                                Freitag 16.30-00.30 Uhr <br>
+                                Samstag 12.30-00.30 Uhr
+                                <br><br>
+    
+                                <u>Festivalgelände
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                    </svg>
+                                    Bahnhof Berikon-Widen:</u> <br>
+                                Samstag 00.30-03.00 Uhr <br>
+                                Sonntag 00.30-03.00 Uhr
+                                <br>
+                                <br>
+                                <u>Festivalgelände
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                    </svg>
+                                    Bahnhof Birmensdorf ZH:</u><br>
+                                Samstag 00.30-03.00 Uhr <br>
+                                Sonntag 00.30-03.00 Uhr
+                                <br>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="row row-info">
-                    <div class="container-fluid border rounded bg-white">
-                        <h1 class="info_title theme_header_text">Helfer*innen</h1>
-                        <p class="info_text text_style">
-                            Ganz im Sinne unseres Vereins „Alpackada“ (All packed ah!) freuen wir uns jederzeit über
-                            helfende Hände. Es gibt verschiedene Bereiche zum Anpacken und Mitgestalten. Einerseits
-                            brauchen wir vor dem Festival Unterstützung beim Aufbau und bei der Dekoration. Am
-                            Festival selbst gibt es unter anderem Aufgaben an der Bar, dem Backstage-Bereich, der Kasse
-                            und als „Trash-heroes“. Weitere unterstützenswerte Bereiche befinden sich in der Fotografie,
-                            Sicherheit und Sanität, Aufsicht am Parkplatz und beim Shuttle-Dienst.
-                            So schön das Festival auch sein wird – vor dem Abbau werden wir uns wohl kaum drücken
-                            können. Deswegen suchen wir hier die besonders Hartnäckigen unter euch, die mit uns
-                            zusammen das Gelände wieder freiräumen.<br /><br />
-                            Gerne dürft ihr euch bei uns per Email oder via euch bekannten OK-Mitgliedern melden!
-                        </p>
+                <div id="accordion" class="accordion pt-3">
+                    <div class="card p-3 border rounded bg-white">
+                        <div class="card-header collapsed p-0" data-toggle="collapse" href="#collapseFour">
+                            <a class="info_title theme_header_text">
+                                Camping
+                            </a>
+                        </div>
+                        <div id="collapseFour" class="card-body info_text text_style collapse p-0" data-parent="#accordion" >
+                            <p class="mb-0 mt-2">Es werden genügend Zeltplätze als Übernachtungsmöglichkeit zur Verfügung stehen. Die
+                                Zeltplatzgebühr ist im Festivalpass inbegriffen, da wir euch die Möglichkeit vor Ort zu
+                                übernachten so einfach wie möglich gestalten wollen. Spart euch Zeit und Geld für eine
+                                überflüssige An- und Abreise und gönnt euch das ultimative Festivalerlebnis, umgeben von
+                                guter Musik und schöner Natur!
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="row row-info">
-                    <div class="container-fluid border rounded bg-white">
-                        <h1 class="info_title theme_header_text">Währung</h1>
-                        <p class="info_text text_style">
-                            Bei uns wird mit der Festivalwährung „Lamas“ gehandelt. An der Kasse könnt ihr „Lamas“
-                            gegen Bargeld beziehen. Zusätzlich habt ihr dort aber auch die Möglichkeit mit TWINT oder
-                            der Kreditkarte zu bezahlen.
-                        </p>
+                <div id="accordion" class="accordion pt-3">
+                    <div class="card p-3 border rounded bg-white">
+                        <div class="card-header collapsed p-0" data-toggle="collapse" href="#collapseFive">
+                            <a class="info_title theme_header_text">
+                                Nachhaltigkeit
+                            </a>
+                        </div>
+                        <div id="collapseFive" class="card-body info_text text_style collapse p-0" data-parent="#accordion" >
+                            <p class="mb-0 mt-2">Aus ökologischer Überzeugung sind wir darum bemüht, auf nachhaltige Baumaterialien wie
+                                Holz und wiederverwenbare Werkstoffe zu setzen. Ausserdem legen wir hohen Wert auf ein
+                                funktionierendes Recycling- und Abfallkonzept: Es werden genügend Abfalleimer (Plastik,
+                                PET etc.) zur Verfügung stehen und wir bitten unsere Festivalbesucher*innen eingehend,
+                                diese auch konsequent zu nutzen. Besonderes Merkmal liegt zudem auf den
+                                Zigarettenstümmel: Bitte verwahrt diese in den „Taschenbechern“, welche ihr beim Eingang
+                                kostenlos beziehen könnt. So können wir für den Rest des Jahres eine grüne, gesunde Wiese
+                                für die Tiere des Bio-Bauernhofs gewähren.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="row row-info">
-                    <div class="container-fluid border rounded bg-white">
-                        <h1 class="info_title theme_header_text">Gelände</h1>
-                        <p class="info_text text_style">
-                            Die Familie Renggli hat sich dazu bereit erklärt, eine Parzelle ihres Grundstückes für das
-                            geplante Festival zur Verfügung zu stellen. Sie sind Anwohner*innen der Gemeinde
-                            Oberwil-Lieli
-                            und wohnhaft im Litzibuch, wo sie einen landwirtschaftlichen Bio-Betrieb führen. Das
-                            Festival-Gelände befindet sich auf Weideland zwischen dem Bauernhof und dem Wald.
+                <div id="accordion" class="accordion pt-3">
+                    <div class="card p-3 border rounded bg-white">
+                        <div class="card-header collapsed p-0" data-toggle="collapse" href="#collapseSeven">
+                            <a class="info_title theme_header_text">
+                                Helfer*innen
+                            </a>
+                        </div>
+                        <div id="collapseSeven" class="card-body info_text text_style collapse p-0" data-parent="#accordion" >
+                            <p class="mb-0 mt-2">Ganz im Sinne unseres Vereins „Alpackada“ (All packed ah!) freuen wir uns jederzeit über
+                                helfende Hände. Es gibt verschiedene Bereiche zum Anpacken und Mitgestalten. Einerseits
+                                brauchen wir vor dem Festival Unterstützung beim Aufbau und bei der Dekoration. Am
+                                Festival selbst gibt es unter anderem Aufgaben an der Bar, dem Backstage-Bereich, der Kasse
+                                und als „Trash-heroes“. Weitere unterstützenswerte Bereiche befinden sich in der Fotografie,
+                                Sicherheit und Sanität, Aufsicht am Parkplatz und beim Shuttle-Dienst.
+                                So schön das Festival auch sein wird – vor dem Abbau werden wir uns wohl kaum drücken
+                                können. Deswegen suchen wir hier die besonders Hartnäckigen unter euch, die mit uns
+                                zusammen das Gelände wieder freiräumen.<br /><br />
+                                Gerne dürft ihr euch bei uns per Email oder via euch bekannten OK-Mitgliedern melden!
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                            <br>
-                            <br>
+                <div id="accordion" class="accordion pt-3">
+                    <div class="card p-3 border rounded bg-white">
+                        <div class="card-header collapsed p-0" data-toggle="collapse" href="#collapseEight">
+                            <a class="info_title theme_header_text">
+                                Währung
+                            </a>
+                        </div>
+                        <div id="collapseEight" class="card-body info_text text_style collapse p-0" data-parent="#accordion" >
+                            <p class="mb-0 mt-2">Bei uns wird mit der Festivalwährung „Lamas“ gehandelt. An der Kasse könnt ihr „Lamas“
+                                gegen Bargeld beziehen. Zusätzlich habt ihr dort aber auch die Möglichkeit mit TWINT oder
+                                der Kreditkarte zu bezahlen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                            Der Festivalveranstalter lehnt jegliche Haftung bei Unfällen ab.
-                        </p>
+                <div id="accordion" class="accordion pt-3">
+                    <div class="card p-3 border rounded bg-white">
+                        <div class="card-header collapsed p-0" data-toggle="collapse" href="#collapseNine">
+                            <a class="info_title theme_header_text">
+                                Gelände
+                            </a>
+                        </div>
+                        <div id="collapseNine" class="card-body info_text text_style collapse p-0" data-parent="#accordion" >
+                            <p class="mb-0 mt-2">Die Familie Renggli hat sich dazu bereit erklärt, eine Parzelle ihres Grundstückes für das
+                                geplante Festival zur Verfügung zu stellen. Sie sind Anwohner*innen der Gemeinde
+                                Oberwil-Lieli
+                                und wohnhaft im Litzibuch, wo sie einen landwirtschaftlichen Bio-Betrieb führen. Das
+                                Festival-Gelände befindet sich auf Weideland zwischen dem Bauernhof und dem Wald.
+    
+                                <br>
+                                <br>
+    
+                                Der Festivalveranstalter lehnt jegliche Haftung bei Unfällen ab.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="accordion" class="accordion pt-3">
+                    <div class="card p-3 border rounded bg-white">
+                        <div class="card-header collapsed p-0" data-toggle="collapse" href="#collapseOne">
+                            <a class="info_title theme_header_text">
+                                Tickets
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="card-body info_text text_style collapse p-0" data-parent="#accordion" >
+                            <p class="mb-0 mt-2">Die Eintrittspreise werden bewusst niedrig gehalten, um sowohl jungen
+                                Menschen als auch grossen Familien den Besuch des Festivals zu ermöglichen.
+                                Aus diesem Grund ist der Eintritt für Kinder bis 12 Jahre kostenlos.
+                                Der Preis für den Zeltplatz ist jeweils im Ticket miteinbegriffen.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 

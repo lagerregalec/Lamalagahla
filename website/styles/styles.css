@@ -97,6 +97,7 @@ body {
 
 #page {
   flex: 1 0 auto;
+  background-color: #000000;
 }
 
 .bg-green{
@@ -186,8 +187,7 @@ body {
 }
 
 .content{
-  height: 100%;
-  padding: 15px;
+  margin: 1rem;
   position: relative;
   justify-content: center;
 }
@@ -274,30 +274,32 @@ body {
   text-align: left;
 }
 
+.theme_header{
+  padding: 3rem 0;
+}
+
 .theme_header_subtitle{
   text-align: center;
   color: #000000;
   font-family: 'Souvenir';
   font-size: 1.75em !important;
   line-height: 1.5rem;
-  padding-top: 4vh;
 }
 
 .theme_header_title{
   color: #000000;
   font-family: 'Souvenir';
   font-size: 4em !important;
-  line-height: 1.5rem;
+  line-height: 4rem;
   text-align: center;
-  padding-top: 3vh;
-  margin-bottom: 4vh;
+  padding-top: 1rem;
 }
 
 .theme_header_text{
   color: #000000;
   font-family: 'Souvenir';
   font-size: 1.75em !important;
-  line-height: 1.5rem;
+  line-height: 1.75rem;
 }
 
 .centered {
@@ -310,6 +312,12 @@ body {
   position: relative;
   /* text-align: center; */
   min-width: 50vw;
+}
+
+.container-fluid{
+  padding: 2rem 1rem;
+  max-width: 700px;
+  margin: auto;
 }
 
 footer {
@@ -714,4 +722,19 @@ iframe {
 
 .border{
   border: 0.3rem solid black!important; 
+}
+
+.accordion .card-header:after {
+  font-family: 'FontAwesome';  
+  content: "\▼";
+  float: right; 
+}
+.accordion .card-header.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\▶";
+}
+
+.card-header{
+  background-color: transparent;
+  border-bottom:none ;
 }
