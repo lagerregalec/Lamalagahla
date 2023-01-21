@@ -140,7 +140,7 @@ body {
 }
 
 .navbar-toggler{
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   z-index: 100;
@@ -219,6 +219,13 @@ body {
 ;
 }
 
+.content-flyer{
+    margin: 1rem;
+    position: relative;
+    justify-content: end;
+    height: 100%;
+}
+
 .img-about{
   /* height: auto;
   float: left;
@@ -227,6 +234,26 @@ body {
   width: 100%;
   margin: 0 0 0 auto;
   display: block;
+}
+
+.img-schriftzug{
+  display: block;
+  padding: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  height:100%;
+  width:100%;
+  object-fit: contain;
+}
+
+.img-illu{
+  display: block;
+  padding: 0vw;
+  margin-left: auto;
+  margin-right: auto;
+  height:100%;
+  width:100%;
+  object-fit: cover;
 }
 
 .img-svg {
