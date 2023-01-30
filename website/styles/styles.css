@@ -456,6 +456,10 @@ footer {
 } 
 */
 
+.rounded{
+  border-radius: 0.5rem!important;
+}
+
 .text {
   text-align: center;
   padding-top: 2em;
